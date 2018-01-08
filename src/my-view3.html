@@ -1,0 +1,77 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/photo-gallery/photo-gallery.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view3">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+	  
+	  photo-gallery {
+		margin-top:20px;
+	  }
+    </style>
+
+	<photo-gallery height='220'>
+		<div class='item' data-url='../images/photos/01.jpg'></div>
+		<div class='item' data-url='../images/photos/02.jpg'></div>			
+		<div class='item' data-url='../images/photos/03.jpg'></div>			
+		<div class='item' data-url='../images/photos/04.jpg'></div>			
+		<div class='item' data-url='../images/photos/05.jpg'></div>			
+		<div class='item' data-url='../images/photos/06.jpg'></div>			
+		<div class='item' data-url='../images/photos/07.jpg'></div>			
+		<div class='item' data-url='../images/photos/08.jpg'></div>			
+		<div class='item' data-url='../images/photos/09.jpg'></div>			
+		<div class='item' data-url='../images/photos/10.jpg'></div>			
+		<div class='item' data-url='../images/photos/11.jpg'></div>			
+		<div class='item' data-url='../images/photos/12.jpg'></div>			
+		<div class='item' data-url='../images/photos/13.jpg'></div>			
+		<div class='item' data-url='../images/photos/14.jpg'></div>			
+		<div class='item' data-url='../images/photos/15.jpg'></div>			
+		<div class='item' data-url='../images/photos/16.jpg'></div>			
+		<div class='item' data-url='../images/photos/17.jpg'></div>			
+		<div class='item' data-url='../images/photos/18.jpg'></div>			
+		<div class='item' data-url='../images/photos/19.jpg'></div>			
+		<div class='item' data-url='../images/photos/20.jpg'></div>			
+		<div class='item' data-url='../images/photos/21.jpg'></div>			
+		<div class='item' data-url='../images/photos/22.jpg'></div>			
+		<div class='item' data-url='../images/photos/23.jpg'></div>			
+		<div class='item' data-url='../images/photos/24.jpg'></div>			
+		<div class='item' data-url='../images/photos/25.jpg'></div>			
+		<div class='item' data-url='../images/photos/26.jpg'></div>			
+		<div class='item' data-url='../images/photos/27.jpg'></div>			
+		<div class='item' data-url='../images/photos/28.jpg'></div>			
+		<div class='item' data-url='../images/photos/29.jpg'></div>			
+		<div class='item' data-url='../images/photos/30.jpg'></div>			
+		<div class='item' data-url='../images/photos/31.jpg'></div>			
+		<div class='item' data-url='../images/photos/32.jpg'></div>			
+		<div class='item' data-url='../images/photos/33.jpg'></div>			
+		<div class='item' data-url='../images/photos/34.jpg'></div>			
+		<div class='item' data-url='../images/photos/35.jpg'></div>			
+		<div class='item' data-url='../images/photos/36.jpg'></div>			
+		<div class='item' data-url='../images/photos/37.jpg'></div>			
+	</photo-gallery>
+  </template>
+
+  <script>
+    class MyView3 extends Polymer.Element {
+      static get is() { return 'my-view3'; }
+    }
+
+    window.customElements.define(MyView3.is, MyView3);
+  </script>
+</dom-module>

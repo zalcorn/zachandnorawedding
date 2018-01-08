@@ -1,0 +1,222 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="my-icons.html">
+
+<link rel="import" href="my-view1.html">
+<link rel="import" href="my-view2.html">
+<link rel="import" href="my-view3.html">
+<link rel="import" href="my-view4.html">
+<link rel="import" href="my-view5.html">
+<link rel="import" href="my-view404.html">
+
+<dom-module id="my-app">
+  <template>
+    <style>
+      :host {
+		--dark-prussian-blue: #003366;
+		--light-prussian-blue: #0066CC;
+		--cornflower-blue: #6699FF;
+        --app-primary-color: var(--dark-prussian-blue);
+        --app-secondary-color: var(--cornflower-blue);
+		--paper-tab-ink: var(--cornflower-blue);
+		--paper-tabs-selection-bar-color: var(--light-prussian-blue);
+        display: block;
+      }
+
+	  app-drawer-layout {
+		max-width:1200px;
+		margin: auto;
+	}
+
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+
+      app-header {
+        color: #003366;
+        background-color: #fff;
+      }
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      .drawer-list {
+        margin: 0 20px;
+      }
+
+      .drawer-list a {
+        display: block;
+        padding: 0 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        line-height: 40px;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+
+	  .main-image {
+		display:block;
+		background-image: url('../images/banner.jpg');
+		background-repeat:no-repeat;
+		background-size: contain;
+		background-position: top left; 
+		width:100%
+		height:0;
+		padding-top:35.9%;
+	  }
+	  
+	  .main-title {
+		font-weight:700;
+		font-family:'Cabin', sans-serif;
+        color: #003366;
+	    text-align: center;
+		line-height:28px;
+		padding:15px;
+		letter-spacing: 2px;
+	  }
+	  
+	  .main-title-ampersand {
+	    font-size:32px;
+		vertical-align:middle;
+	  }
+	  
+	  .main-title-divider {
+		background-color: var(--app-primary-color);
+		display:block;
+		width:100px;
+        height:2px;
+		margin: 15px auto;
+	  }
+	  
+	  .main-title-name {
+	    font-size:22px;
+		letter-spacing: 4px;
+		vertical-align:middle;
+	  }
+	  
+	  paper-tabs {
+		font-family:'Cabin', sans-serif;
+		font-weight:700;
+	  }
+
+	@media only screen and (min-width: 600px)  {
+		  paper-tab {
+			width:20%;
+		  }
+	}
+
+
+    </style>
+
+    <app-location
+        route="{{route}}"
+        url-space-regex="^[[rootPath]]">
+    </app-location>
+
+    <app-route
+        route="{{route}}"
+        pattern="[[rootPath]]:page"
+        data="{{routeData}}"
+        tail="{{subroute}}">
+    </app-route>
+
+    <app-drawer-layout fullbleed>
+      <!-- Drawer content 
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+        <app-toolbar>Menu</app-toolbar>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="view1" href="[[rootPath]]view1">View One</a>
+          <a name="view2" href="[[rootPath]]view2">View Two</a>
+          <a name="view3" href="[[rootPath]]view3">View Three</a>
+        </iron-selector> 
+      </app-drawer>
+-->
+      <!-- Main content -->
+      <app-header-layout >
+	  
+	  
+
+        <app-header fixed>
+          <!--<app-toolbar reveals effects="waterfall">
+            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+          </app-toolbar>-->
+            <div class="main-title">
+			<div>8.11.18</div>
+			<div class="main-title-divider"></div>
+			<div class="main-title-name">ZACH&nbsp;&amp;&nbsp;NORA</div>
+			<div class="main-title-divider"></div>
+			<div>LOUISVILLE</div>
+			</div>
+			<div class="main-image"></div>
+			<paper-tabs selected="{{selected}}" attr-for-selected="name">
+				<paper-tab name="wedding">WEDDING</paper-tab>
+				<paper-tab name="details">DETAILS</paper-tab>
+				<paper-tab name="photos">PHOTOS</paper-tab>
+				<paper-tab name="registry">REGISTRY</paper-tab>
+				<paper-tab name="rsvp">RSVP</paper-tab>
+			</paper-tabs>
+        </app-header>
+
+        <iron-pages
+            selected="{{selected}}"
+            attr-for-selected="name"
+            fallback-selection="view404"
+            role="main">
+          <my-view1 name="wedding"></my-view1>
+          <my-view2 name="details"></my-view2>
+          <my-view3 name="photos"></my-view3>
+		  <my-view4 name="registry"></my-view4>
+		  <my-view5 name="rsvp"></my-view4>
+          <my-view404 name="view404"></my-view404>
+        </iron-pages>
+      </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    // Gesture events like tap and track generated from touch will not be
+    // preventable, allowing for better scrolling performance.
+    Polymer.setPassiveTouchGestures(true);
+    class MyApp extends Polymer.Element {
+      static get is() { return 'my-app'; }
+      static get properties() {
+        return {
+          routeData: Object,
+		  selected : {
+			value: 'wedding',
+		  },
+          subroute: String,
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
+        };
+      }
+    }
+    window.customElements.define(MyApp.is, MyApp);
+  </script>
+</dom-module>
