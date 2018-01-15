@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/photo-gallery/photo-gallery.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view3">
@@ -21,94 +20,103 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 10px;
 		text-align:center;
       }
+
 	  
-	  photo-gallery {
-		margin-top:20px;
-	  }
+  @media (max-width: 600px) {
+    sl-gallery {
+      --sl-gallery-columns: 1;
+    }
+  }
+
+  @media (min-width: 601px) {
+    sl-gallery {
+       --sl-gallery-item-height: 100%;
+    }
+  }
     </style>
     <h1>Engagement</h1>
-	<photo-gallery height='220'>
-		<div class='item' data-url='../images/photos/engagement/01.jpg'></div>
-		<div class='item' data-url='../images/photos/engagement/02.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/03.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/04.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/05.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/06.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/07.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/08.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/09.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/10.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/11.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/12.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/13.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/14.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/15.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/16.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/17.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/18.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/19.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/20.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/21.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/22.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/23.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/24.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/25.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/26.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/27.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/28.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/29.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/30.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/31.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/32.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/33.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/34.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/35.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/36.jpg'></div>			
-		<div class='item' data-url='../images/photos/engagement/37.jpg'></div>			
-	</photo-gallery>
+	<sl-gallery>
+		<sl-gallery-image src='../images/photos/engagement/01.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/engagement/02.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/03.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/04.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/05.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/06.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/07.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/08.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/09.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/10.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/11.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/12.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/13.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/14.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/15.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/16.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/17.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/18.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/19.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/20.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/21.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/22.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/23.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/24.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/25.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/26.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/27.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/28.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/29.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/30.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/31.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/32.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/33.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/34.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/35.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/36.jpg'></sl-gallery-image>			
+		<sl-gallery-image src='../images/photos/engagement/37.jpg'></sl-gallery-image>			
+	</sl-gallery>
     <h1>Our Life Together (So Far!)</h1>
-	<photo-gallery height='220'>
-		<div class='item' data-url='../images/photos/life/04.jpg'></div>
-		<div class='item' data-url='../images/photos/life/05.jpg'></div>
-		<div class='item' data-url='../images/photos/life/06.jpg'></div>
-		<div class='item' data-url='../images/photos/life/07.jpg'></div>
-		<div class='item' data-url='../images/photos/life/08.jpg'></div>
-		<div class='item' data-url='../images/photos/life/09.jpg'></div>
-		<div class='item' data-url='../images/photos/life/10.jpg'></div>
-		<div class='item' data-url='../images/photos/life/11.jpg'></div>
-		<div class='item' data-url='../images/photos/life/12.jpg'></div>
-		<div class='item' data-url='../images/photos/life/13.jpg'></div>
-		<div class='item' data-url='../images/photos/life/14.jpg'></div>
-		<div class='item' data-url='../images/photos/life/15.jpg'></div>
-		<div class='item' data-url='../images/photos/life/16.jpg'></div>
-		<div class='item' data-url='../images/photos/life/17.jpg'></div>
-		<div class='item' data-url='../images/photos/life/18.jpg'></div>
-		<div class='item' data-url='../images/photos/life/19.jpg'></div>
-		<div class='item' data-url='../images/photos/life/20.jpg'></div>
-		<div class='item' data-url='../images/photos/life/21.jpg'></div>
-		<div class='item' data-url='../images/photos/life/22.jpg'></div>
-		<div class='item' data-url='../images/photos/life/23.jpg'></div>
-		<div class='item' data-url='../images/photos/life/24.jpg'></div>
-		<div class='item' data-url='../images/photos/life/25.jpg'></div>
-		<div class='item' data-url='../images/photos/life/26.jpg'></div>
-		<div class='item' data-url='../images/photos/life/27.jpg'></div>
-		<div class='item' data-url='../images/photos/life/28.jpg'></div>
-		<div class='item' data-url='../images/photos/life/29.jpg'></div>
-		<div class='item' data-url='../images/photos/life/30.jpg'></div>
-		<div class='item' data-url='../images/photos/life/31.jpg'></div>
-		<div class='item' data-url='../images/photos/life/32.jpg'></div>
-		<div class='item' data-url='../images/photos/life/33.jpg'></div>
-		<div class='item' data-url='../images/photos/life/34.jpg'></div>
-		<div class='item' data-url='../images/photos/life/35.jpg'></div>
-		<div class='item' data-url='../images/photos/life/36.jpg'></div>
-		<div class='item' data-url='../images/photos/life/37.jpg'></div>
-		<div class='item' data-url='../images/photos/life/38.jpg'></div>
-		<div class='item' data-url='../images/photos/life/39.jpg'></div>
-		<div class='item' data-url='../images/photos/life/40.jpg'></div>
-		<div class='item' data-url='../images/photos/life/41.jpg'></div>
-		<div class='item' data-url='../images/photos/life/42.jpg'></div>
-		<div class='item' data-url='../images/photos/life/43.jpg'></div>
-	</photo-gallery>
+	<sl-gallery prefix="life">
+		<sl-gallery-image src='../images/photos/life/04.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/05.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/06.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/07.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/08.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/09.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/10.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/11.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/12.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/13.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/14.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/15.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/16.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/17.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/18.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/19.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/20.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/21.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/22.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/23.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/24.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/25.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/26.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/27.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/28.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/29.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/30.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/31.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/32.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/33.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/34.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/35.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/36.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/37.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/38.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/39.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/40.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/41.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/42.jpg'></sl-gallery-image>
+		<sl-gallery-image src='../images/photos/life/43.jpg'></sl-gallery-image>
+	</sl-gallery>
   </template>
 
   <script>
