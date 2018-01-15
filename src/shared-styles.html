@@ -58,6 +58,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height:2px;
 		margin: 50px auto 30px auto;
 	  }
+	  
+	  .edge-only {
+		display:none;
+	  }
+	  
+		@supports (-ms-ime-align:auto) { 
+			.edge-only { 
+				display:block; 
+			} 
+		}
 
     </style>
   </template>
