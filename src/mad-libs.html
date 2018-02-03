@@ -45,10 +45,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-style: italic;
         font-size: smaller;
       }
+	  
+	input { 
+		text-align: center; 
+	}
+	  
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		opacity: 1; /* Firefox */
+		text-align:center;
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		text-align:center;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		text-align:center;
+	}
     </style>
 
     <div>
-        <h1>Our Story</h1>
+        <h1>Our Story (Mad Libs Edition)</h1>
         <p>...Because this is way more fun.</p>
     </div>
 
@@ -56,12 +82,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <span class$="{{style}}">{{item.text}}</span>
       <template is="dom-if" if="{{item.label}}">
         <iron-label class="user-input">
-          <span class="label">{{item.label}}</span>
-          <input type="text" value="{{item.input::input}}">
+          <input type="text" value="{{item.input::input}}" placeholder="{{item.label}}">
         </iron-label>
       </template>
     </template>
-    <br>
+    <br/>
+	<br/>
     <paper-button raised on-click="reveal">Submit</paper-button>
 
   </template>
