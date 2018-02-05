@@ -109,6 +109,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	<br/>
     <paper-button raised style$="display: {{inputVisibility}}" on-click="reveal">Done!</paper-button>
     <paper-button raised style$="display: {{responseVisibility}}" on-click="showOriginal">Show Original</paper-button>
+	<paper-button raised style$="display: {{responseVisibility}}" on-click="sendEmail">Send us your mad libs!</paper-button>
   </template>
 
   <script>
@@ -179,6 +180,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       showOriginal() {
         this.originalVisibility = "inline";
       }
+	  
+	  sendEmail() {
+	   var emailBody = '';
+       for (let o of this.madLibsStory) {
+          emailBody += o.label ? o.text + o.input : o.text;
+       }
+	   window.open('mailto:us@zachandnora.wedding?subject=My Zach %26 Nora Mad Libs!&body='+ emailBody);
+	  }
     }
 
     window.customElements.define(MadLibs.is, MadLibs);
