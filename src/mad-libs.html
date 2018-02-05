@@ -1,0 +1,195 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="mad-libs">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .hidden {
+        color: lightblue;
+        background-color: lightblue;
+        line-height: 45px;
+      }
+
+      .revealed {
+        color: black;
+        background-color: white;
+        line-height: 45px;
+      }
+
+      .user-input {
+        position: relative;
+        padding: 5px;
+      }
+
+      .label {
+        position: absolute;
+        top: 25px;
+        left: 40px;
+        color: gray;
+        font-style: italic;
+        font-size: smaller;
+      }
+
+      .response {
+        font-weight: bold;
+        color: var(--cornflower-blue);
+      }
+
+      .answer {
+        font-style: italic;
+        color: var(--light-prussian-blue);
+        font-weight: bold;
+      }
+
+	input {
+		text-align: center;
+	}
+
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		opacity: 1; /* Firefox */
+		text-align:center;
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		text-align:center;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: gray;
+	    font-family: 'Source Sans Pro', 'Noto', sans-serif;
+		font-style: italic;
+		text-align:center;
+	}
+    </style>
+
+    <div>
+        <h1>Our Story (Mad Libs Edition)</h1>
+        <p>...Because this is way more fun.</p>
+    </div>
+
+    <iron-form is="iron-form" id="mad-libs-form">
+      <template is="dom-repeat" items="{{madLibsStory}}">
+        <span class$="{{style}}">{{item.text}}</span>
+        <template is="dom-if" if="{{item.label}}">
+          <iron-label class="user-input" style$="display: {{inputVisibility}}">
+            <input type="text" value="{{item.input::input}}" placeholder="{{item.label}}" required>
+          </iron-label>
+          <iron-label class="response" style$="display: {{responseVisibility}}">[[item.input]]</iron-label>
+          <span style$="display: {{originalVisibility}}">
+            (
+            <iron-label class="answer">{{item.answer}}</iron-label>
+            )
+          </span>
+        </template>
+      </template>
+    </iron-form>
+    <br/>
+	<br/>
+    <paper-button raised style$="display: {{inputVisibility}}" on-click="reveal">Done!</paper-button>
+    <paper-button raised style$="display: {{responseVisibility}}" on-click="showOriginal">Show Original</paper-button>
+	<paper-button raised style$="display: {{responseVisibility}}" on-click="sendEmail">Send us your mad libs!</paper-button>
+  </template>
+
+  <script>
+    class MadLibs extends Polymer.Element {
+      static get is() {
+        return 'mad-libs';
+      }
+
+      static get properties() {
+        return {
+          style: {
+            type: String,
+            value: 'hidden',
+          },
+          madLibsStory: {
+            type: Array,
+            value() {
+              return [
+                { text: 'Zach and Nora met while ', input: '', label: 'Verb (-ing)', answer: 'interning' },
+                { text: ' at ', input: '', label: 'Company', answer: 'Google' },
+                { text: ' the summer of 2012. They became fast friends, but it wasn\'t until the next summer when Zach charmed Nora with a romantic viewing of ', input: '', label: 'Movie', answer: 'Terminator' },
+                { text: ' that they started dating. Long-distance couldn\'t keep the two apart, though it did provide many frequent flyer ', input: '', label: 'Plural Noun', answer: 'miles' },
+                { text: '. After graduating in 2015, they drove across the country to  ', input: '', label: 'Location', answer: 'California' },
+                { text: ' where they moved in together and started their careers.\n\nIn November 2017, Zach and Nora took a much needed vacation to  ', input: '', label: 'Location', answer: 'Hawaii' },
+                { text: ', which Zach ', input: '', label: 'Adverb', answer: 'suspiciously' },
+                { text: ' did most of the planning for. On their second day, Nora was surprised at the beach by a ', input: '', label: 'Vehicle', answer: 'sailboat' },
+                { text: ' crew. As the sun was setting, Zach carefully balanced on one ', input: '', label: 'Body Part', answer: 'knee' },
+                { text: ' (tricker than it sounds on a moving ', input: '', label: 'Same Vehicle', answer: 'sailboat' },
+                { text: ') and popped the question. Despite minor ', input: '', label: 'Illness', answer: 'seasickness' },
+                { text: ', Nora still managed to say yes.\n\nZach and Nora couldn\'t be happier to start this next chapter in their lives, and can\'t wait to celebrate surrounded by friends and  ', input: '', label: 'Plural Noun', answer: 'family' },
+                { text: '. Hopefully the years ahead feature many more elaborate ', input: '', label: 'Holiday', answer: 'Halloween' },
+                { text: ' costumes, good ', input: '', label: 'Beverage', answer: 'bourbon' },
+                { text: ', and 80s ', input: '', label: 'Movie Genre', answer: 'sci-fi' },
+                { text: ' classics.'},
+              ];
+            }
+          },
+          inputVisibility: {
+            type: String,
+            value: 'inline',
+          },
+          responseVisibility: {
+            type: String,
+            value: 'none',
+          },
+          originalVisibility: {
+            type: String,
+            value: 'none',
+          }
+        }
+      }
+
+      constructor() {
+        super();
+      };
+
+      reveal() {
+        this.style = "revealed";
+        this.responseVisibility = "inline";
+        this.inputVisibility = "none";
+        var result = "";
+        for (let o of this.madLibsStory) {
+          result += o.label ? o.text + o.input : o.text;
+        }
+        console.log(result);
+      };
+
+      showOriginal() {
+        this.originalVisibility = "inline";
+      }
+	  
+	  sendEmail() {
+	   var emailBody = '';
+       for (let o of this.madLibsStory) {
+          emailBody += o.label ? o.text + o.input : o.text;
+       }
+	   window.open('mailto:us@zachandnora.wedding?subject=My Zach %26 Nora Mad Libs!&body='+ emailBody);
+	  }
+    }
+
+    window.customElements.define(MadLibs.is, MadLibs);
+  </script>
+</dom-module>
